@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4FC3F7</color>
+    <color name="colorPrimaryDark">#4FC3F7</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBackground">#4FC3F7</color>
+    <color name="colorBackgroundButton">#80D8FF</color>
+    <color name="colorTextButton">#ffffff</color>
+    <color name="colorMainButton">#feca57</color>
+    <color name="colorDefaultButton">#c8d6e5</color>
+    <color name="colorMainActivityBackground">#000</color>
+    <color name="colorMainAcitivityTitle">#fff</color>
+    <color name="colorMenuBackground">#c8d6e5</color>
+    <color name="colorToolbarMenuBackground">#222f3e</color>
+
+</resources>

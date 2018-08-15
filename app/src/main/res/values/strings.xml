@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Training</string>
+    <string name="fartaxi">FarTaxi</string>
+    <string name="driver">Driver</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="register">Register</string>
+    <string name="looking_for_the_rider_app">Looking For The Rider App</string>
+    <string name="username_or_email">USERNAME OR EMAIL</string>
+    <string name="password">PASSWORD</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="close">close</string>
+    <string name="show_password">Show Password</string>
+    <string name="terms_of_use_one">By proceeding you agree to Ubers Terms of Use and acknowledge you have read the Privacy Policy.</string>
+    <string name="terms_of_use_two">I also agree that Uber ot its respresentatives may contact me by email, phone, or MS (including by automated means) at the email address or number i provide. including for marketing purposes.</string>
+    <string name="next">Next</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_mapss">Map</string>
+</resources>
