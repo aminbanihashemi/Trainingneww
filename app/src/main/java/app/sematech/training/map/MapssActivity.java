@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.support.annotation.ColorInt;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +31,7 @@ import app.sematech.training.map.cityModels.CityModels;
 import app.sematech.training.map.cityModels.Geometry;
 import app.sematech.training.map.cityModels.Result;
 import cz.msebera.android.httpclient.Header;
+import es.dmoral.toasty.Toasty;
 
 public class MapssActivity extends FragmentActivity implements OnMapReadyCallback ,View.OnClickListener{
     private GoogleMap mMap;
@@ -91,9 +94,10 @@ public class MapssActivity extends FragmentActivity implements OnMapReadyCallbac
     private void clickedDialogButton() {
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialog_search);
-        searchCity = (Button) dialog.findViewById(R.id.search_city);
-        cancel = (Button) dialog.findViewById(R.id.cancel);
-        city = (EditText) dialog.findViewById(R.id.citydialog);
+        dialog.setTitle("Enter Your City :");
+        searchCity = (Button) dialog.findViewById(R.id.search_btn);
+        cancel = (Button) dialog.findViewById(R.id.cancel_btn);
+        city = (EditText) dialog.findViewById(R.id.value_edittext);
         dialog.setCancelable(true);
 
 
@@ -215,8 +219,9 @@ public class MapssActivity extends FragmentActivity implements OnMapReadyCallbac
             Gson gson = new Gson();
             Allmodels eAllmodels = gson.fromJson(responseString, Allmodels.class);
             String temp = eAllmodels.getQuery().getResults().getChannel().getItem().getCondition().getTemp().toString();
-
-            Toast.makeText(getBaseContext(), "Temperature : " + Math.round(PublicMethod.convertFahrenheittoCelsiusMethod(temp))+" °", Toast.LENGTH_SHORT).show();
+            Toasty.Config.getInstance().setTextColor(Color.RED).tintIcon(true).apply();
+            Toasty.normal(this, "          " + Math.round(PublicMethod.convertFahrenheittoCelsiusMethod(temp))+" °", R.drawable.ic_if_weather_02_809977).show();
+//  Toast.makeText(getBaseContext(), "Temperature : " + Math.round(PublicMethod.convertFahrenheittoCelsiusMethod(temp))+" °", Toast.LENGTH_SHORT).show();
         }catch (Exception e){
             Toast.makeText(mContext, e.getMessage()+"", Toast.LENGTH_SHORT).show();
         }

@@ -21,25 +21,27 @@ import org.json.JSONObject;
 import cz.msebera.android.httpclient.Header;
 
 public class IMDBActivity extends AppCompatActivity implements View.OnClickListener {
-    EditText name;
-    Button search,moreData;
-    TextView title, imdbRating, year, genre, plot;
 
+    Button moreData;
+    TextView title, imdbRating, year, genre, plot;
+    String value;
     ImageView image;
     ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_imdb);
         Intent intent = getIntent();
-        String MessagID = intent.getStringExtra("meesage");
         bind();
+        value = intent.getStringExtra("ValueIntent");
+        getDataFromIMDB(value);
+
+
     }
 
     private void bind() {
-        name = (EditText) findViewById(R.id.name);
+
         title = (TextView) findViewById(R.id.title);
         imdbRating = (TextView) findViewById(R.id.imdbRating);
         year = (TextView) findViewById(R.id.year);
@@ -48,23 +50,19 @@ public class IMDBActivity extends AppCompatActivity implements View.OnClickListe
         moreData = (Button) findViewById(R.id.more_data);
         moreData.setVisibility(View.INVISIBLE);
         image = (ImageView) findViewById(R.id.image);
-        search = (Button) findViewById(R.id.search);
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setTitle("Loading");
         progressDialog.setMessage("PLS wait to load data from IMDB");
-        search.setOnClickListener(this);
         moreData.setOnClickListener(this);
-        image.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View v) {
 
-            if (v.getId() == R.id.search) {
-                getDataFromIMDB(name.getText().toString());
-            } else if (v.getId() == R.id.more_data) {
-                linkMethod(name.getText().toString());
+             if (v.getId() == R.id.more_data) {
+                linkMethod(value);
             }
     }
 
@@ -73,12 +71,10 @@ public class IMDBActivity extends AppCompatActivity implements View.OnClickListe
             s = s.replace(" ", "+");
         }
         String url = "https://www.imdb.com/find?ref_=nv_sr_fn&q="+s+"&s=all";
-        Intent intent = new Intent(this,WebpageActivity.class);
-        intent.putExtra("message",url);
+        Intent intent = new Intent(this,BrowserActivity.class);
+        intent.putExtra("UrlIntent",url);
         startActivity(intent);
     }
-
-
 
     private void getDataFromIMDB(String s) {
         progressDialog.show();
@@ -115,9 +111,6 @@ public class IMDBActivity extends AppCompatActivity implements View.OnClickListe
             String SRgenre = allObject.getString("Genre");
             String SRplot = allObject.getString("Plot");
             String SRimage = allObject.getString("Poster");
-            //String link =
-
-
 
             Glide.with(this).load(SRimage).into(image);
             title.setText(SRtitle);
@@ -125,7 +118,6 @@ public class IMDBActivity extends AppCompatActivity implements View.OnClickListe
             year.setText("Year: "+SRyear);
             genre.setText("Genre: "+SRgenre);
             plot.setText("Plot: "+SRplot);
-
 
         } catch (Exception e) {
             Toast.makeText(this, "The movie not found!", Toast.LENGTH_SHORT).show();

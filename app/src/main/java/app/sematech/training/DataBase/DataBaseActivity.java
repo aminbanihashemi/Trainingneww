@@ -1,5 +1,6 @@
 package app.sematech.training.DataBase;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,8 @@ public class DataBaseActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_base);
+        Intent intent = getIntent();
+        String MessagID = intent.getStringExtra("message");
         db = new DatabaseHandler(this,"sematech.db",null,1);
         name = (EditText) findViewById(R.id.name);
         family = (EditText)findViewById(R.id.family);

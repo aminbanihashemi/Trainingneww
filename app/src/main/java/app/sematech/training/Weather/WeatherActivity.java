@@ -35,6 +35,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
     TextView cityToday,tempToday,dateToday,highToday,lowToday,textToday;
     Context mContext;
     ListView list_days;
+    String value;
     ImageView imageToday,arrowUp,arrowDown;
     ProgressDialog progressDialog;
     @Override
@@ -42,13 +43,14 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
         Intent intent = getIntent();
-        String MessagID = intent.getStringExtra("meesage");
+        value = intent.getStringExtra("ValueIntent");
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setTitle("Loading");
         progressDialog.setMessage("PLS wait to load data from Weather Source");
         mContext = this;
         bind();
+        getDataFromYahoo(value);
     }
 
     private void bind() {

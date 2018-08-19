@@ -10,17 +10,17 @@
     android:paddingTop="12dp"
     tools:context="app.sematech.training.IMDBActivity">
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Search a Movie" />
+    <!--<EditText-->
+        <!--android:id="@+id/name"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Search a Movie" />-->
 
-    <Button
-        android:id="@+id/search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Search" />
+    <!--<Button-->
+        <!--android:id="@+id/search"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Search" />-->
 
     <LinearLayout
         android:layout_width="match_parent"

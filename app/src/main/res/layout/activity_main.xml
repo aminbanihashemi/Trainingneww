@@ -101,14 +101,14 @@
                         android:text="Shared Preferences (Login)" />
 
                     <Button
-                        android:id="@+id/sub_activiy"
+                        android:id="@+id/database_activity"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="10"
                         android:background="@color/colorMainButton"
-                        android:text="Sub Activity" />
+                        android:text="DataBase" />
                 </LinearLayout>
 
                 <LinearLayout
