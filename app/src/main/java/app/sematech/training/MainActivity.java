@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             final Dialog dialog = new Dialog(this);
             dialog.setContentView(R.layout.dialog_search);
             dialog.setTitle("Enter City :");
+
             searchBtn = (Button) dialog.findViewById(R.id.search_btn);
             cancelBtn = (Button) dialog.findViewById(R.id.cancel_btn);
             valueEdittext = (EditText) dialog.findViewById(R.id.value_edittext);
