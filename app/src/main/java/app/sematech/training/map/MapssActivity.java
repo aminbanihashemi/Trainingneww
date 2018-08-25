@@ -220,7 +220,7 @@ public class MapssActivity extends FragmentActivity implements OnMapReadyCallbac
             Allmodels eAllmodels = gson.fromJson(responseString, Allmodels.class);
             String temp = eAllmodels.getQuery().getResults().getChannel().getItem().getCondition().getTemp().toString();
             Toasty.Config.getInstance().setTextColor(Color.RED).tintIcon(true).apply();
-            Toasty.normal(this, "          " + Math.round(PublicMethod.convertFahrenheittoCelsiusMethod(temp))+" °", R.drawable.ic_if_weather_02_809977).show();
+            Toasty.normal(this, "Temp : " + Math.round(PublicMethod.convertFahrenheittoCelsiusMethod(temp))+" °", R.drawable.ic_if_weather_02_809977).show();
 //  Toast.makeText(getBaseContext(), "Temperature : " + Math.round(PublicMethod.convertFahrenheittoCelsiusMethod(temp))+" °", Toast.LENGTH_SHORT).show();
         }catch (Exception e){
             Toast.makeText(mContext, e.getMessage()+"", Toast.LENGTH_SHORT).show();

@@ -9,6 +9,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +22,7 @@ import app.sematech.training.Weather.WeatherActivity;
 import app.sematech.training.map.MapssActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button calculator, formRegister, login, databaseActivity, listView, map;
+    Button calculator, formRegister, login, databaseActivity, listView, map,setting;
     Button searchMovie, activityWeather, recycleView, webView, wifiCheck, bluetoothCheck, mobileDataCheck, searchBtn, cancelBtn;
     EditText valueEdittext;
     String destinationClass;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.bluetooth_check).setOnClickListener(this);
         findViewById(R.id.mobile_data_check).setOnClickListener(this);
         findViewById(R.id.map).setOnClickListener(this);
+        findViewById(R.id.setting).setOnClickListener(this);
 
 
         bind();
@@ -156,6 +159,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mobileDataIntentMethod();
         } else if (v.getId() == R.id.map) {
             mapMethod();
+        }else if (v.getId() == R.id.setting) {
+
         }
     }
 

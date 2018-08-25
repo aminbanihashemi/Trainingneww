@@ -13,6 +13,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import app.sematech.training.R;
+import es.dmoral.toasty.Toasty;
 
 public class DataBaseActivity extends AppCompatActivity implements View.OnClickListener {
     EditText name, family;
@@ -38,9 +39,13 @@ public class DataBaseActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
+        if(!name.getText().toString().equals("") && !family.getText().toString().equals("")){
+            db.insert(name.getText().toString(), family.getText().toString());
+            Toast.makeText(this, "new user has been added", Toast.LENGTH_SHORT).show();
+        }else {
+            Toasty.error(mContext, "Please Fill all Fields !", Toast.LENGTH_SHORT, true).show();
+        }
 
-        db.insert(name.getText().toString(), family.getText().toString());
-        Toast.makeText(this, "new user has been added", Toast.LENGTH_SHORT).show();
         name.setText("");
         family.setText("");
         show();

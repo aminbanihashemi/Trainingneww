@@ -31,12 +31,12 @@
                     android:gravity="center_vertical">
 
                     <Button
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerVertical="true"
-                        android:background="@drawable/list"
                         android:id="@+id/toggle"
                         android:layout_width="35dp"
-                        android:layout_height="35dp" />
+                        android:layout_height="35dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_baseline_menu" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -46,6 +46,21 @@
                         android:textColor="#fff"
                         android:textSize="16sp"
                         android:textStyle="bold" />
+                    <Button
+                        android:id="@+id/search_btn"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="32dp"
+                        android:background="@drawable/ic_baseline_search" />
+                    <Button
+                        android:id="@+id/setting"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_baseline_more_vert" />
 
                 </RelativeLayout>
 
@@ -199,25 +214,29 @@
         android:layout_height="match_parent"
         android:layout_gravity="left"
         android:background="#c8d6e5">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <Button
                 android:id="@+id/wifi_check"
-                android:text="Wifi"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Wifi" />
+
             <Button
                 android:id="@+id/bluetooth_check"
-                android:text="Bluetooth"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Bluetooth" />
+
             <Button
                 android:id="@+id/mobile_data_check"
-                android:text="Mobile Data Check"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Mobile Data Check" />
         </LinearLayout>
 
 
