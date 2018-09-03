@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="app.sematech.training">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -12,7 +13,15 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        tools:replace="android:icon"
+        android:theme="@style/AppTheme"
+        android:name="com.orm.SugarApp">
+
+        <meta-data android:name="DATABASE" android:value="sugar_example.db" />
+        <meta-data android:name="VERSION" android:value="2" />
+        <meta-data android:name="QUERY_LOG" android:value="true" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="app.sematech.training" />
+
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
@@ -89,7 +98,7 @@
             android:name=".BrowserActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".ArrayResourceActivity" />
-        <activity android:name=".DataBase.DownloaderActivity"></activity>
+        <activity android:name=".DownloaderActivity" />
     </application>
 
 </manifest>

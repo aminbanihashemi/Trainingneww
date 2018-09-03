@@ -22,7 +22,7 @@ import app.sematech.training.Weather.WeatherActivity;
 import app.sematech.training.map.MapssActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button calculator, formRegister, login, databaseActivity, listView, map,setting;
+    Button calculator, downloaderRegister, login, databaseActivity, listView, map,setting;
     Button searchMovie, activityWeather, recycleView, webView, wifiCheck, bluetoothCheck, mobileDataCheck, searchBtn, cancelBtn;
     EditText valueEdittext;
     String destinationClass;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         mContext = this;
         findViewById(R.id.calculator_activity).setOnClickListener(this);
-        findViewById(R.id.form_register_activity).setOnClickListener(this);
+        findViewById(R.id.downloader_activity).setOnClickListener(this);
         findViewById(R.id.shared_preferences).setOnClickListener(this);
         findViewById(R.id.database_activity).setOnClickListener(this);
         findViewById(R.id.list_view).setOnClickListener(this);
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void bind() {
         calculator = (Button) findViewById(R.id.calculator_activity);
-        formRegister = (Button) findViewById(R.id.form_register_activity);
+        downloaderRegister = (Button) findViewById(R.id.downloader_activity);
         login = (Button) findViewById(R.id.shared_preferences);
         databaseActivity = (Button) findViewById(R.id.database_activity);
         listView = (Button) findViewById(R.id.list_view);
@@ -83,8 +83,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v.getId() == R.id.calculator_activity) {
             calculatorActivityMethod();
-        } else if (v.getId() == R.id.form_register_activity) {
-            formRegisterMethod();
+        } else if (v.getId() == R.id.downloader_activity) {
+            downloaderActivityMethod();
         } else if (v.getId() == R.id.shared_preferences) {
             sharedPreferencesMethod();
         } else if (v.getId() == R.id.database_activity) {
@@ -162,6 +162,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }else if (v.getId() == R.id.setting) {
 
         }
+    }
+
+    private void downloaderActivityMethod() {
+        Intent intent = new Intent(MainActivity.this, DownloaderActivity.class);
+        intent.putExtra("message", "12345");
+        startActivity(intent);
+
     }
 
     private void mapMethod() {

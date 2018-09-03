@@ -1,5 +1,6 @@
 package app.sematech.training.DataBase;
 
+
 public class StudentModel {
     String name;
     String family;

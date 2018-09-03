@@ -7,10 +7,10 @@
     android:orientation="vertical"
     android:padding="12dp"
     android:gravity="center"
-    tools:context=".DataBase.DownloaderActivity">
+    tools:context=".DownloaderActivity">
 
     <EditText
-        android:hint="Enter file url"
+        android:text="https://hw13.cdn.asset.aparat.com/aparat-video/f57fa00dfe38e4762050c648efdacce511706335-240p__14035.mp4"
         android:id="@+id/url"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -21,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"/>
+
     <ProgressBar
         android:max="100"
         android:id="@+id/download_percent"
@@ -28,10 +29,17 @@
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/percent"
         android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/result_downloader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout>
