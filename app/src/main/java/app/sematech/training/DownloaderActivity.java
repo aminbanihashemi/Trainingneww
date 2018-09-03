@@ -1,6 +1,8 @@
 package app.sematech.training;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.FileAsyncHttpResponseHandler;
@@ -25,6 +28,8 @@ public class DownloaderActivity extends AppCompatActivity implements View.OnClic
     Button download;
     ProgressBar downloadPercent;
     TextView percent,resultDownloader;
+    Context mContext;
+    VideoView test;
 
 
     @Override
@@ -33,6 +38,7 @@ public class DownloaderActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_downloader);
         Intent intent = getIntent();
         String MessagID = intent.getStringExtra("Message");
+        mContext = this;
         bind();
     }
 
@@ -41,13 +47,16 @@ public class DownloaderActivity extends AppCompatActivity implements View.OnClic
         downloadPercent = (ProgressBar) findViewById(R.id.download_percent);
         percent = (TextView) findViewById(R.id.percent);
         resultDownloader = (TextView) findViewById(R.id.result_downloader);
+        test = (VideoView) findViewById(R.id.test);
         download = (Button) findViewById(R.id.download);
         download.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        download(url.getText().toString());
+        if (url.getText().toString().equals("")){
+            url.setError("Please enter url");
+        }else download(url.getText().toString());
     }
 
     private void download(final String urlValue) {
@@ -71,6 +80,9 @@ public class DownloaderActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void onSuccess(int statusCode, Header[] headers, File file) {
                 String fileAddress = file.getAbsolutePath(); //Get address of file
+                File newFile = new File("/sdcard/myfiles/video.mp4");
+                file.renameTo(newFile);
+
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                 String currentDateAndTime = sdf.format(new Date());
                 DownloadModel dl = new DownloadModel();
@@ -81,9 +93,11 @@ public class DownloaderActivity extends AppCompatActivity implements View.OnClic
                 url.setText("");
                 Toast.makeText(DownloaderActivity.this, "File has been downloaded", Toast.LENGTH_SHORT).show();
                 List<DownloadModel> downloads= DownloadModel.listAll(DownloadModel.class);
-                for (DownloadModel thisfile:downloads) {
-                    resultDownloader.append(thisfile.getDate()+" "+thisfile.getDownloadedAddress()+"\n");
-                }
+                test.setVideoURI(Uri.parse(fileAddress.toString()));
+                test.start();
+//                for (DownloadModel thisfile:downloads) {
+//                    resultDownloader.append(thisfile.getDate()+" "+thisfile.getDownloadedAddress()+"\n");
+//                }
             }
         });
     }
