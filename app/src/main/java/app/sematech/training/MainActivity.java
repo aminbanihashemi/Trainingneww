@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.bluetooth_check).setOnClickListener(this);
         findViewById(R.id.mobile_data_check).setOnClickListener(this);
         findViewById(R.id.map).setOnClickListener(this);
-        findViewById(R.id.setting).setOnClickListener(this);
+//        findViewById(R.id.setting).setOnClickListener(this);
 
 
         bind();
@@ -77,6 +78,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         valueEdittext = (EditText) findViewById(R.id.value_edittext);
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(0, 100, 1, "Settings");
+        menu.add(0, 200, 6, "About App");
+        menu.add(0, 300, 3, "Log out");
+//        menu.add(0, 2, 6, getResources().getString(R.string.form_title));
+//        MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==100){
+            Toast.makeText(mContext, "Clicked on Settings", Toast.LENGTH_SHORT).show();
+        }else if(item.getItemId()==200) {
+            Toast.makeText(mContext, "Clicked on About App", Toast.LENGTH_SHORT).show();
+        }else if(item.getItemId()==300) {
+            Toast.makeText(mContext, "Clicked on ALog out", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -159,9 +184,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mobileDataIntentMethod();
         } else if (v.getId() == R.id.map) {
             mapMethod();
-        }else if (v.getId() == R.id.setting) {
-
         }
+// else if (v.getId() == R.id.setting) {
+//
+//        }
     }
 
     private void downloaderActivityMethod() {

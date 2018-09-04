@@ -44,6 +44,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Save" />
+    <Button
+        android:id="@+id/clear_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Clear" />
 
     <ListView
         android:id="@+id/list"

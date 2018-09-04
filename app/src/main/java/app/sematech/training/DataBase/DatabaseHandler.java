@@ -40,6 +40,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
 
     }
+    public void delete()
+    {   SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(tableQuery, null, null);
+    }
     public List<StudentModel> getStudents(){
         List<StudentModel> students = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();

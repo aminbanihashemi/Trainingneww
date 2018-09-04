@@ -1,7 +1,9 @@
 package app.sematech.training.DataBase;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,10 +19,11 @@ import es.dmoral.toasty.Toasty;
 
 public class DataBaseActivity extends AppCompatActivity implements View.OnClickListener {
     EditText name, family;
-    Button save;
+    Button save,clearData;
     DatabaseHandler db;
     ListView list;
     Context mContext;
+    AlertDialog.Builder dialogClearData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +34,41 @@ public class DataBaseActivity extends AppCompatActivity implements View.OnClickL
         db = new DatabaseHandler(mContext, "sematech.db", null, 1);
         list = (ListView) findViewById(R.id.list);
         name = (EditText) findViewById(R.id.name);
+        clearData = (Button) findViewById(R.id.clear_data);
+        clearData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogClearData = new AlertDialog.Builder(mContext);
+                dialogClearData.setTitle("Confirm");
+                dialogClearData.setMessage("Are you sure to remove all of your data?");
+                dialogClearData.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        clearDataBaseMethod();
+                        dialog.dismiss();
+                    }
+                });
+                dialogClearData.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                dialogClearData.show();
+            }
+        });
+
         family = (EditText) findViewById(R.id.family);
         save = (Button) findViewById(R.id.save);
         show();
         save.setOnClickListener(this);
+    }
+
+    private void clearDataBaseMethod() {
+
+        db.delete();
+        show();
+
     }
 
     @Override
