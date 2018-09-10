@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.opengl.Visibility;
 import android.provider.Settings;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -24,9 +25,9 @@ import app.sematech.training.Weather.WeatherActivity;
 import app.sematech.training.map.MapssActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button calculator, downloaderRegister, login, databaseActivity, listView, map,setting,searchBtnMain;
+    Button calculator, downloaderRegister, login, databaseActivity, listView, map, setting, searchBtnMain;
     Button searchMovie, activityWeather, recycleView, webView, wifiCheck, bluetoothCheck, mobileDataCheck, searchBtn, cancelBtn;
-    EditText valueEdittext,searchBar;
+    EditText valueEdittext, searchBar;
     String destinationClass;
     DrawerLayout drawer;
 
@@ -99,11 +100,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==100){
+        if (item.getItemId() == 100) {
             Toast.makeText(mContext, "Clicked on Settings", Toast.LENGTH_SHORT).show();
-        }else if(item.getItemId()==200) {
+        } else if (item.getItemId() == 200) {
             Toast.makeText(mContext, "Clicked on About App", Toast.LENGTH_SHORT).show();
-        }else if(item.getItemId()==300) {
+        } else if (item.getItemId() == 300) {
             Toast.makeText(mContext, "Clicked on ALog out", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
@@ -191,10 +192,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mapMethod();
         } else if (v.getId() == R.id.search_btn_main) {
             searchBar.setVisibility(View.VISIBLE);
+            searchBtnMain.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (!searchBar.equals("")) {
+                        searchMainMethod(searchBar.getText().toString());
+                    } else {
+                        searchBar.setVisibility(View.INVISIBLE);
+                    }
+                }
+            });
         }
 // else if (v.getId() == R.id.setting) {
 //
 //        }
+    }
+
+    private void searchMainMethod(String s) {
+        Toast.makeText(mContext, "Searching the entered word", Toast.LENGTH_SHORT).show();
     }
 
     private void downloaderActivityMethod() {

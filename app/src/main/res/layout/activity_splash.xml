@@ -6,20 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".SplashActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Loaaaaaaaading..."
-        android:textColor="#fff"
-        android:textSize="18dp" />
-
     <com.airbnb.lottie.LottieAnimationView
+        android:layout_centerInParent="true"
         android:id="@+id/animation_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:lottie_autoPlay="true"
-        app:lottie_fileName="wave_load.json"
+        app:lottie_fileName="loading.json"
         app:lottie_loop="true"
         app:lottie_colorFilter="@color/cast_libraries_material_featurehighlight_outer_highlight_default_color" />
 
