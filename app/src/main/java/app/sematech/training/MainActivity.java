@@ -10,22 +10,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import app.sematech.training.DataBase.DataBaseActivity;
 import app.sematech.training.RecycleView.RecycleActivity;
+import app.sematech.training.User.LoginActivity;
 import app.sematech.training.Weather.WeatherActivity;
 import app.sematech.training.map.MapssActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button calculator, downloaderRegister, login, databaseActivity, listView, map,setting;
+    Button calculator, downloaderRegister, login, databaseActivity, listView, map,setting,searchBtnMain;
     Button searchMovie, activityWeather, recycleView, webView, wifiCheck, bluetoothCheck, mobileDataCheck, searchBtn, cancelBtn;
-    EditText valueEdittext;
+    EditText valueEdittext,searchBar;
     String destinationClass;
     DrawerLayout drawer;
 
@@ -50,9 +51,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.bluetooth_check).setOnClickListener(this);
         findViewById(R.id.mobile_data_check).setOnClickListener(this);
         findViewById(R.id.map).setOnClickListener(this);
+        findViewById(R.id.search_btn_main).setOnClickListener(this);
+
 //        findViewById(R.id.setting).setOnClickListener(this);
-
-
         bind();
 
 
@@ -72,9 +73,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         wifiCheck = (Button) findViewById(R.id.wifi_check);
         bluetoothCheck = (Button) findViewById(R.id.bluetooth_check);
         mobileDataCheck = (Button) findViewById(R.id.mobile_data_check);
+        searchBar = (EditText) findViewById(R.id.search_bar);
+        searchBar.setVisibility(View.INVISIBLE);
         map = (Button) findViewById(R.id.map);
-        searchBtn = (Button) findViewById(R.id.search_btn);
-        cancelBtn = (Button) findViewById(R.id.cancel_btn);
+        searchBtn = (Button) findViewById(R.id.search_btn_dialog);
+        searchBtnMain = (Button) findViewById(R.id.search_btn_main);
+        cancelBtn = (Button) findViewById(R.id.cancel_btn_dialog);
         valueEdittext = (EditText) findViewById(R.id.value_edittext);
 
 
@@ -82,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         menu.add(0, 100, 1, "Settings");
         menu.add(0, 200, 6, "About App");
         menu.add(0, 300, 3, "Log out");
@@ -120,8 +125,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             final Dialog dialog = new Dialog(this);
             dialog.setContentView(R.layout.dialog_search);
             dialog.setTitle("Enter Movie :");
-            searchBtn = (Button) dialog.findViewById(R.id.search_btn);
-            cancelBtn = (Button) dialog.findViewById(R.id.cancel_btn);
+            searchBtn = (Button) dialog.findViewById(R.id.search_btn_dialog);
+            cancelBtn = (Button) dialog.findViewById(R.id.cancel_btn_dialog);
             valueEdittext = (EditText) dialog.findViewById(R.id.value_edittext);
             valueEdittext.setHint("E.g. The Godfather, The Dark knight,  Interstellar .... ");
             dialog.setCancelable(true);
@@ -150,8 +155,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             final Dialog dialog = new Dialog(this);
             dialog.setContentView(R.layout.dialog_search);
             dialog.setTitle("Enter City :");
-            searchBtn = (Button) dialog.findViewById(R.id.search_btn);
-            cancelBtn = (Button) dialog.findViewById(R.id.cancel_btn);
+            searchBtn = (Button) dialog.findViewById(R.id.search_btn_dialog);
+            cancelBtn = (Button) dialog.findViewById(R.id.cancel_btn_dialog);
             valueEdittext = (EditText) dialog.findViewById(R.id.value_edittext);
             valueEdittext.setHint("E.g. New York, London,  Tehran .... ");
             dialog.setCancelable(true);
@@ -184,6 +189,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mobileDataIntentMethod();
         } else if (v.getId() == R.id.map) {
             mapMethod();
+        } else if (v.getId() == R.id.search_btn_main) {
+            searchBar.setVisibility(View.VISIBLE);
         }
 // else if (v.getId() == R.id.setting) {
 //

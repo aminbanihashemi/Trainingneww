@@ -95,8 +95,8 @@ public class MapssActivity extends FragmentActivity implements OnMapReadyCallbac
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialog_search);
         dialog.setTitle("Enter Your City :");
-        searchCity = (Button) dialog.findViewById(R.id.search_btn);
-        cancel = (Button) dialog.findViewById(R.id.cancel_btn);
+        searchCity = (Button) dialog.findViewById(R.id.search_btn_dialog);
+        cancel = (Button) dialog.findViewById(R.id.cancel_btn_dialog);
         city = (EditText) dialog.findViewById(R.id.value_edittext);
         dialog.setCancelable(true);
 

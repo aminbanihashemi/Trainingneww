@@ -15,4 +15,8 @@
     <string name="next">Next</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_mapss">Map</string>
+    <string name="sematech_training">Sematech Training</string>
+    <string name="calculator">Calculator</string>
+    <string name="url_downloader">URL Downloader</string>
+    <string name="map">Map</string>
 </resources>

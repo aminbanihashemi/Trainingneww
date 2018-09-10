@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,16 +34,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String insertQuery = " INSERT INTO students (name,family) " +
                 " VALUES(  '" + name + "' , '" + family + "'   )";
 
-
-
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL(insertQuery);
         db.close();
 
     }
-    public void delete()
-    {   SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(tableQuery, null, null);
+    public void delete() {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete("students", null, null);
+        db.execSQL("delete from students");
+
     }
     public List<StudentModel> getStudents(){
         List<StudentModel> students = new ArrayList<>();

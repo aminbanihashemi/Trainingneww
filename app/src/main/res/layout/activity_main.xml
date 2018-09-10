@@ -23,46 +23,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:background="@color/colorToolbarMenuBackground"
-                android:elevation="5dp">
+                android:elevation="50dp">
 
-                <RelativeLayout
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:gravity="center_vertical">
+                    android:layout_height="match_parent"
+                    android:weightSum="100"
+                    android:gravity="center">
 
                     <Button
+                        android:layout_weight="10"
                         android:id="@+id/toggle"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerVertical="true"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
                         android:background="@drawable/ic_baseline_menu" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <EditText
+                        android:layout_weight="80"
+                        android:inputType="none"
+                        android:id="@+id/search_bar"
+                        android:hint="Search Here"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_centerInParent="true"
-                        android:text="Sematech Training"
                         android:textColor="#fff"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
+
                     <Button
-                        android:id="@+id/search_btn"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_weight="10"
+                        android:id="@+id/search_btn_main"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="32dp"
                         android:background="@drawable/ic_baseline_search" />
-                    <!--<Button-->
-                        <!--android:id="@+id/setting"-->
-                        <!--android:layout_width="35dp"-->
-                        <!--android:layout_height="35dp"-->
-                        <!--android:layout_alignParentRight="true"-->
-                        <!--android:layout_centerVertical="true"-->
-                        <!--android:background="@drawable/ic_baseline_more_vert" />-->
 
-                </RelativeLayout>
+                </LinearLayout>
 
             </android.support.v7.widget.Toolbar>
 
@@ -86,7 +83,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_weight="10"
                         android:background="@color/colorMainButton"
-                        android:text="Calculator" />
+                        android:text="@string/calculator" />
 
                     <Button
                         android:id="@+id/downloader_activity"
@@ -96,7 +93,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_weight="10"
                         android:background="@color/colorMainButton"
-                        android:text="URL Downloader " />
+                        android:text="@string/url_downloader" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -140,7 +137,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_weight="10"
                         android:background="@color/colorMainButton"
-                        android:text="Map" />
+                        android:text="@string/map" />
 
                     <Button
                         android:id="@+id/list_view"

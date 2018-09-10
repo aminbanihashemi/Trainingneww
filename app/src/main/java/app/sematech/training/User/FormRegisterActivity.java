@@ -1,7 +1,9 @@
-package app.sematech.training;
+package app.sematech.training.User;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import app.sematech.training.R;
 
 public class FormRegisterActivity extends AppCompatActivity {
 

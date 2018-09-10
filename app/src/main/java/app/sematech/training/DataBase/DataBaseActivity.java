@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +46,7 @@ public class DataBaseActivity extends AppCompatActivity implements View.OnClickL
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         clearDataBaseMethod();
+                        show();
                         dialog.dismiss();
                     }
                 });
@@ -66,8 +68,14 @@ public class DataBaseActivity extends AppCompatActivity implements View.OnClickL
 
     private void clearDataBaseMethod() {
 
-        db.delete();
-        show();
+        try {
+            db.delete();
+
+        } catch (NullPointerException e) {
+            // TODO Auto-generated catch block
+            Log.d("DATABASE", "ERROR!");
+            e.printStackTrace();
+        }
 
     }
 
