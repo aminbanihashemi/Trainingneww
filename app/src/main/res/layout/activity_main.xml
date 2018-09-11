@@ -86,7 +86,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginRight="5dp"
                         android:layout_weight="10"
-                        android:background="@color/colorMainButton"
+                        android:background="@drawable/button_theme"
                         android:text="@string/calculator" />
 
                     <Button
@@ -96,7 +96,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="10"
-                        android:background="@color/colorMainButton"
+                        android:background="@drawable/button_theme"
                         android:text="@string/url_downloader" />
                 </LinearLayout>
 
@@ -113,7 +113,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginRight="5dp"
                         android:layout_weight="10"
-                        android:background="@color/colorMainButton"
+                        android:background="@drawable/button_theme"
                         android:text="Shared Preferences (Login)" />
 
                     <Button
@@ -123,7 +123,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="10"
-                        android:background="@color/colorMainButton"
+                        android:background="@drawable/button_theme"
                         android:text="DataBase" />
                 </LinearLayout>
 
@@ -140,7 +140,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginRight="5dp"
                         android:layout_weight="10"
-                        android:background="@color/colorMainButton"
+                        android:background="@drawable/button_theme"
                         android:text="@string/map" />
 
                     <Button
@@ -150,7 +150,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="10"
-                        android:background="@color/colorMainButton"
+                        android:background="@drawable/button_theme"
                         android:text="List View" />
                 </LinearLayout>
 
@@ -167,7 +167,7 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginRight="5dp"
                         android:layout_weight="10"
-                        android:background="@color/colorMainButton"
+                        android:background="@drawable/button_theme"
                         android:text="Web View" />
 
                     <Button
@@ -178,8 +178,9 @@
                         android:layout_marginBottom="10dp"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="10"
-                        android:background="@color/colorMainButton"
+                        android:background="@drawable/button_theme"
                         android:text="Search Movie" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -194,7 +195,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="5dp"
                         android:layout_weight="10"
-                        android:background="@color/colorMainButton"
+                        android:background="@drawable/button_theme"
                         android:text="Weather" />
 
                     <Button
@@ -203,7 +204,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_weight="10"
-                        android:background="@color/colorMainButton"
+                        android:background="@drawable/button_theme"
                         android:text="Recycle View" />
                 </LinearLayout>
             </LinearLayout>

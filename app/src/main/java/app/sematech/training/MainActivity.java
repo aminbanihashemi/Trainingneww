@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.opengl.Visibility;
 import android.provider.Settings;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -15,11 +14,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import app.sematech.training.DataBase.DataBaseActivity;
 import app.sematech.training.RecycleView.RecycleActivity;
+import app.sematech.training.User.Login2Activity;
 import app.sematech.training.User.LoginActivity;
 import app.sematech.training.Weather.WeatherActivity;
 import app.sematech.training.map.MapssActivity;
@@ -279,13 +278,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private void formRegisterMethod() {
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        Intent intent = new Intent(MainActivity.this, Login2Activity.class);
         intent.putExtra("message", "12346");
         startActivity(intent);
     }
 
     private void sharedPreferencesMethod() {
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        Intent intent = new Intent(MainActivity.this, Login2Activity.class);
         intent.putExtra("message", "12346");
         startActivity(intent);
     }

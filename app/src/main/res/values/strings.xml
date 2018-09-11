@@ -19,4 +19,5 @@
     <string name="calculator">Calculator</string>
     <string name="url_downloader">URL Downloader</string>
     <string name="map">Map</string>
+    <string name="facebook_app_id">487460775079669</string>
 </resources>

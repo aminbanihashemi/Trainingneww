@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Window;
 import android.view.WindowManager;
 
-import com.airbnb.lottie.LottieAnimationView;
+import app.sematech.training.User.Login2Activity;
+import app.sematech.training.User.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -24,10 +24,11 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent=new Intent(SplashActivity.this,MainActivity.class);
+                intent.putExtra("message", "12345");
                 startActivity(intent);
                 finish();
             }
-        },5000);
+        },2500);
 
     }
 }

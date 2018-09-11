@@ -19,7 +19,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
         Intent intent = getIntent();
-        String MessagID = intent.getStringExtra("Message");
+        String MessagID = intent.getStringExtra("message");
         bind();
 
     }

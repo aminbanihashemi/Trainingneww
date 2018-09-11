@@ -26,6 +26,9 @@
             android:name="QUERY_LOG"
             android:value="true" />
         <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="app.sematech.training" />
 
@@ -42,7 +45,9 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".User.LoginActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        </activity>
         <activity
             android:name=".ListActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -75,7 +80,7 @@
              Note that the API key is linked to the encryption key used to sign the APK.
              You need a different API key for each encryption key, including the release key that is used to
              sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -103,13 +108,24 @@
         <activity android:name=".ArrayResourceActivity" />
         <activity android:name=".DownloaderActivity" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="Training">
+
+        </activity>
+
+        <activity android:name=".User.Login2Activity">
+
         </activity>
     </application>
 
