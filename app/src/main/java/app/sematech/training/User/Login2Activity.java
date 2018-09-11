@@ -8,11 +8,16 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+import com.facebook.login.widget.LoginButton;
 
 import app.sematech.training.R;
 
 public class Login2Activity extends AppCompatActivity {
+    private LoginButton loginButton;
+    private CallbackManager callbackManager;
     Context mContext;
     Button signIn;
     @Override
@@ -20,9 +25,12 @@ public class Login2Activity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
+
         Intent intent = getIntent();
         String MessagID = intent.getStringExtra("message");
         mContext=this;
+        callbackManager = CallbackManager.Factory.create();
+        loginButton = (LoginButton) findViewById(R.id.facebook_login_button);
         FacebookSdk.sdkInitialize(getApplicationContext());
 
 
@@ -35,5 +43,11 @@ public class Login2Activity extends AppCompatActivity {
 //        });
 
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

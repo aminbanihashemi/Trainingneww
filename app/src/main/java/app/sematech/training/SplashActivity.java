@@ -6,9 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
 
-import app.sematech.training.User.Login2Activity;
-import app.sematech.training.User.LoginActivity;
-
 public class SplashActivity extends AppCompatActivity {
 
     Handler handler;

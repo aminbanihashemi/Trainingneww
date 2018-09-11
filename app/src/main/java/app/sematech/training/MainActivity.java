@@ -19,7 +19,6 @@ import android.widget.Toast;
 import app.sematech.training.DataBase.DataBaseActivity;
 import app.sematech.training.RecycleView.RecycleActivity;
 import app.sematech.training.User.Login2Activity;
-import app.sematech.training.User.LoginActivity;
 import app.sematech.training.Weather.WeatherActivity;
 import app.sematech.training.map.MapssActivity;
 
@@ -133,8 +132,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             searchBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    if (valueEdittext.getText().toString().equals("")){
+                        valueEdittext.setError("PLS fill field");
+                    }else{
                     iMDBMethod(valueEdittext.getText().toString());
                     dialog.dismiss();
+                    }
                 }
             });
             cancelBtn.setOnClickListener(new View.OnClickListener() {
@@ -163,8 +166,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             searchBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    weatherActivityMethod(valueEdittext.getText().toString());
-                    dialog.dismiss();
+                    if (valueEdittext.getText().toString().equals("")){
+                        valueEdittext.setError("PLS fill field");
+                    }else {
+                        weatherActivityMethod(valueEdittext.getText().toString());
+                        dialog.dismiss();
+                    }
                 }
             });
             cancelBtn.setOnClickListener(new View.OnClickListener() {
