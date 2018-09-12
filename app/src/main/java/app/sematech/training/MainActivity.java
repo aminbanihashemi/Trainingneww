@@ -215,6 +215,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void searchMainMethod(String s) {
+
         Toast.makeText(mContext, "Searching the entered word", Toast.LENGTH_SHORT).show();
     }
 
