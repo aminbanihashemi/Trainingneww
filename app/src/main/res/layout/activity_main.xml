@@ -79,7 +79,7 @@
                     android:layout_weight="20"
                     android:weightSum="20">
 
-                    <Button
+                    <app.sematech.training.customView.MyButtonView
                         android:id="@+id/calculator_activity"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

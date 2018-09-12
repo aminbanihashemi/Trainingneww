@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Training</string>
-    <string name="fartaxi">FarTaxi</string>
-    <string name="driver">Driver</string>
     <string name="sign_in">SIGN IN</string>
     <string name="register">Register</string>
     <string name="looking_for_the_rider_app">Looking For The Rider App</string>
