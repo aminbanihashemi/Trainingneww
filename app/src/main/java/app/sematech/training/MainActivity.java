@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 import app.sematech.training.DataBase.DataBaseActivity;
 import app.sematech.training.RecycleView.RecycleActivity;
 import app.sematech.training.User.Login2Activity;
@@ -23,11 +25,12 @@ import app.sematech.training.Weather.WeatherActivity;
 import app.sematech.training.map.MapssActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button calculator, downloaderRegister, login, databaseActivity, listView, map, setting, searchBtnMain;
+    Button calculator, downloaderRegister, login, databaseActivity, listView, map, setting;
     Button searchMovie, activityWeather, recycleView, webView, wifiCheck, bluetoothCheck, mobileDataCheck, searchBtn, cancelBtn;
     EditText valueEdittext, searchBar;
     String destinationClass;
     DrawerLayout drawer;
+    LottieAnimationView animationButtonSearch;
 
     Context mContext;
 
@@ -50,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.bluetooth_check).setOnClickListener(this);
         findViewById(R.id.mobile_data_check).setOnClickListener(this);
         findViewById(R.id.map).setOnClickListener(this);
-        findViewById(R.id.search_btn_main).setOnClickListener(this);
+        findViewById(R.id.animation_button_search).setOnClickListener(this);
 
 //        findViewById(R.id.setting).setOnClickListener(this);
         bind();
@@ -75,8 +78,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         searchBar = (EditText) findViewById(R.id.search_bar);
         searchBar.setVisibility(View.INVISIBLE);
         map = (Button) findViewById(R.id.map);
+        animationButtonSearch = (LottieAnimationView) findViewById(R.id.animation_button_search);
         searchBtn = (Button) findViewById(R.id.search_btn_dialog);
-        searchBtnMain = (Button) findViewById(R.id.search_btn_main);
         cancelBtn = (Button) findViewById(R.id.cancel_btn_dialog);
         valueEdittext = (EditText) findViewById(R.id.value_edittext);
 
@@ -196,16 +199,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mobileDataIntentMethod();
         } else if (v.getId() == R.id.map) {
             mapMethod();
-        } else if (v.getId() == R.id.search_btn_main) {
+        } else if (v.getId() == R.id.animation_button_search) {
             searchBar.setVisibility(View.VISIBLE);
-            searchBtnMain.setOnClickListener(new View.OnClickListener() {
+            animationButtonSearch.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (!searchBar.equals("")) {
                         searchMainMethod(searchBar.getText().toString());
-                    } else {
+                        animationButtonSearch.setProgress(1f);
                         searchBar.setVisibility(View.INVISIBLE);
-                    }
                 }
             });
         }

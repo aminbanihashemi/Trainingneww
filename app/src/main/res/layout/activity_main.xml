@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#c8d6e5"
     android:orientation="vertical"
-    android:weightSum="100"
     tools:context="app.sematech.training.MainActivity">
 
     <RelativeLayout
@@ -28,25 +28,26 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="horizontal"
                     android:padding="5dp"
-                    android:weightSum="100">
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    android:gravity="center_vertical">
 
                     <Button
+                        android:layout_weight="0.5"
                         android:id="@+id/toggle"
-                        android:layout_width="0dp"
+                        android:layout_width="36dp"
                         android:layout_height="36dp"
-                        android:layout_weight="15"
+                        android:layout_gravity="center"
                         android:background="@drawable/ic_baseline_menu" />
 
 
                     <EditText
+                        android:layout_weight="4"
                         android:id="@+id/search_bar"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_centerInParent="true"
-                        android:layout_weight="70"
                         android:hint="Search Here"
                         android:inputType="none"
                         android:singleLine="true"
@@ -54,14 +55,15 @@
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
-                    <Button
-                        android:id="@+id/search_btn_main"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                    <com.airbnb.lottie.LottieAnimationView
+                        app:lottie_colorFilter="#000"
+                        android:layout_weight="0.5"
                         android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_weight="15"
-                        android:background="@drawable/ic_baseline_search" />
+                        android:id="@+id/animation_button_search"
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        app:lottie_fileName="search.json" />
+
 
                 </LinearLayout>
 
