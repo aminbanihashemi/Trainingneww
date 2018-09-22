@@ -25,17 +25,16 @@
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
-        <meta-data android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="app.sematech.training" />
 
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
         <activity
             android:name=".SecondActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -111,20 +110,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity-->
-            <!--android:name=".Facebook.MyFacebookActivity"-->
-            <!--android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"-->
-            <!--android:label="Training">-->
+        <!-- <activity -->
+        <!-- android:name=".Facebook.MyFacebookActivity" -->
+        <!-- android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" -->
+        <!-- android:label="Training"> -->
 
-        <!--</activity>-->
 
-        <activity android:name="com.facebook.FacebookActivity"
+        <!-- </activity> -->
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:label="@string/app_name" />
-
-        <activity android:name=".User.Login2Activity"
-            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"/>
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".User.Login2Activity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" />
+        <activity android:name=".Fragments.FragmentContainerActivity"></activity>
     </application>
 
 </manifest>
