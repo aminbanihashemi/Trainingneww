@@ -3,6 +3,8 @@ package app.sematech.training.Fragments;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import app.sematech.training.R;
+
 public class FragmentContainerActivity extends AppCompatActivity {
 
     @Override

@@ -34,7 +34,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".SecondActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -103,13 +103,7 @@
         <activity android:name=".MenuActivity" />
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/SplashScreenTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/SplashScreenTheme"></activity>
         <!-- <activity -->
         <!-- android:name=".Facebook.MyFacebookActivity" -->
         <!-- android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" -->
@@ -126,7 +120,14 @@
         <activity
             android:name=".User.Login2Activity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" />
-        <activity android:name=".Fragments.FragmentContainerActivity"></activity>
+        <activity android:name=".Fragments.FragmentContainerActivity">
+
+        </activity>
+        <activity android:name=".Fragments.MyPagerActivity"><intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
     </application>
 
 </manifest>

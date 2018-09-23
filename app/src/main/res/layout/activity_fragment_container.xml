@@ -4,13 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:layout_height="match_parent"
     tools:context=".Fragments.FragmentContainerActivity">
-
     <fragment
+        android:layout_margin="12dp"
         android:id="@+id/f1"
         class="app.sematech.training.Fragments.FragmentA"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
+        android:layout_height="250dp"/>
+
+    <fragment
+        android:layout_margin="12dp"
+        android:id="@+id/f2"
+        class="app.sematech.training.Fragments.FragmentA"
+        android:layout_width="250dp"
+        android:layout_height="250dp"/>
+
+    <fragment
+        android:layout_margin="12dp"
+        android:id="@+id/f3"
+        class="app.sematech.training.Fragments.FragmentA"
+        android:layout_width="250dp"
         android:layout_height="250dp"/>
 
 </LinearLayout>
