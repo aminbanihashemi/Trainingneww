@@ -1,5 +1,7 @@
 package app.sematech.training.Carlist;
 
+import android.graphics.drawable.Drawable;
+
 import java.io.Serializable;
 
 /**
@@ -11,9 +13,9 @@ public class CarItem implements Serializable {
     private String cName;
     private String cModel;
     private String cColor;
-    private String cImage;
+    private int cImage;
 
-    public CarItem(String cName, String cModel, String cColor,String cImage) {
+    public CarItem(String cName, String cModel, String cColor,int cImage) {
 
         this.cName = cName;
         this.cModel = cModel;
@@ -21,11 +23,11 @@ public class CarItem implements Serializable {
         this.cImage = cImage;
     }
 
-    public String getcImage() {
+    public int getcImage() {
         return cImage;
     }
 
-    public void setcImage(String cImage) {
+    public void setcImage(int cImage) {
         this.cImage = cImage;
     }
 

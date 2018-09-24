@@ -16,13 +16,13 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        CarItem c1 = new CarItem("Bmw","M4","Blue","");
-        
-        Intent i = new Intent(this, ThirdActivity.class);
-        i.putExtra("ash", c1);
-        startActivity(i);
-
-        CarItem c2 = new CarItem("Benz","Gclass","Black","");
+//        CarItem c1 = new CarItem("Bmw","M4","Blue","");
+//
+//        Intent i = new Intent(this, ThirdActivity.class);
+//        i.putExtra("ash", c1);
+//        startActivity(i);
+//
+//        CarItem c2 = new CarItem("Benz","Gclass","Black","");
 
 
 

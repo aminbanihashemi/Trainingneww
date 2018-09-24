@@ -20,11 +20,13 @@ public class RecycleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycle);
         Intent intent = getIntent();
+        mContext=this;
         String MessagID = intent.getStringExtra("meesage");
-        recycler = (RecyclerView) findViewById(R.id.recycler_view);
-        CarItem c1 = new CarItem("Bmw","M4","Blue","");
+        recycler = (RecyclerView) findViewById(R.id.recycler);
+        CarItem c1 = new CarItem("Bmw","M4","Blue",R.drawable.car1);
 
-        CarItem c2 = new CarItem("Benz","Gclass","Black","");
+
+        CarItem c2 = new CarItem("Benz","Gclass","Black",R.drawable.car2);
 
 
         List<CarItem> cars = new ArrayList<>();

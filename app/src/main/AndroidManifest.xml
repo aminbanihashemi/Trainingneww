@@ -63,7 +63,13 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".RecycleView.RecycleActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".User.FormRegisterActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -123,11 +129,9 @@
         <activity android:name=".Fragments.FragmentContainerActivity">
 
         </activity>
-        <activity android:name=".Fragments.MyPagerActivity"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Fragments.MyPagerActivity">
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+        </activity>
     </application>
 
 </manifest>

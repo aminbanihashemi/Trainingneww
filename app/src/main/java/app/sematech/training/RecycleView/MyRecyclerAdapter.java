@@ -2,6 +2,7 @@ package app.sematech.training.RecycleView;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,16 +32,20 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Ho
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(mContext).inflate(R.layout.cars_list_items, parent, false);
-        Holder h = new Holder(v);
-        return h;
+//        Holder h = new Holder(v);
+        return new Holder(v);
     }
 
     @Override
     public void onBindViewHolder(Holder holder, int position) {
-        Glide.with(mContext).load(cars.get(position).getcImage()).into(holder.carImage);
-        holder.carName.setText(cars.get(position).getcName());
-        holder.carColor.setText(cars.get(position).getcColor());
-        holder.carModel.setText(cars.get(position).getcModel());
+        try {
+            Glide.with(mContext).load(cars.get(position).getcImage()).into(holder.carImage);
+            holder.carName.setText(cars.get(position).getcName());
+            holder.carColor.setText(cars.get(position).getcColor());
+            holder.carModel.setText(cars.get(position).getcModel());
+        }catch (Exception e){
+            Log.e("","");
+        }
     }
 
     @Override
@@ -58,7 +63,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Ho
             carName = (TextView) itemView.findViewById(R.id.car_name);
             carModel = (TextView) itemView.findViewById(R.id.car_model);
             carColor = (TextView) itemView.findViewById(R.id.car_color);
-
 
         }
     }
