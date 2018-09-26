@@ -75,6 +75,7 @@
             android:layout_gravity="center_horizontal"
             android:text="  connect_with_facebook" />
 
+
     </LinearLayout>
 
 

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -63,6 +64,13 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Ho
             carName = (TextView) itemView.findViewById(R.id.car_name);
             carModel = (TextView) itemView.findViewById(R.id.car_model);
             carColor = (TextView) itemView.findViewById(R.id.car_color);
+            carImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String clickedName = cars.get(getAdapterPosition()).getcName();
+                    Toast.makeText(mContext, clickedName, Toast.LENGTH_SHORT).show();
+                }
+            });
 
         }
     }

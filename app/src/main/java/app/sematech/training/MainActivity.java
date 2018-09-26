@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
 import app.sematech.training.DataBase.DataBaseActivity;
 import app.sematech.training.RecycleView.RecycleActivity;
