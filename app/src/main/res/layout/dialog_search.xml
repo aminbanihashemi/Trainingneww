@@ -8,6 +8,7 @@
     <EditText
         android:textColorHint="#fff"
         android:hint="E.g. New York ,London ,Tokyo ...."
+        android:textColor="#fff"
         android:paddingTop="12dp"
         android:id="@+id/value_edittext"
         android:inputType="text"

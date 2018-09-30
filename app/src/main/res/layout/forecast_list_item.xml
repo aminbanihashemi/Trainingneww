@@ -8,6 +8,7 @@
     android:weightSum="4">
 
     <TextView
+        android:textColor="#000"
         android:gravity="center|top"
         android:id="@+id/date"
         android:layout_width="0dp"
@@ -23,6 +24,7 @@
         android:layout_weight="1" />
 
     <TextView
+        android:textColor="#000"
         android:gravity="center|top"
         android:id="@+id/text"
         android:layout_width="0dp"
@@ -31,6 +33,7 @@
         android:layout_weight="1" />
 
     <LinearLayout
+
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="right"

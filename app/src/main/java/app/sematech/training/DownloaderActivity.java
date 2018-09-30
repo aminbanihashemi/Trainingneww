@@ -21,6 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import app.sematech.training.Weather.VideoActivity;
 import cz.msebera.android.httpclient.Header;
 
 public class DownloaderActivity extends AppCompatActivity implements View.OnClickListener {
@@ -77,6 +78,7 @@ public class DownloaderActivity extends AppCompatActivity implements View.OnClic
                 Toast.makeText(DownloaderActivity.this, "Error in downloading file", Toast.LENGTH_SHORT).show();
             }
 
+
             @Override
             public void onSuccess(int statusCode, Header[] headers, File file) {
                 String fileAddress = file.getAbsolutePath(); //Get address of file
@@ -93,6 +95,9 @@ public class DownloaderActivity extends AppCompatActivity implements View.OnClic
                 url.setText("");
                 Toast.makeText(DownloaderActivity.this, "File has been downloaded", Toast.LENGTH_SHORT).show();
                 List<DownloadModel> downloads= DownloadModel.listAll(DownloadModel.class);
+                Intent intent = new Intent(mContext, VideoActivity.class);
+                intent.putExtra("a_Tag",fileAddress.toString());
+                startActivity(intent);
                 test.setVideoURI(Uri.parse(fileAddress.toString()));
                 test.start();
 //                for (DownloadModel thisfile:downloads) {

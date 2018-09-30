@@ -34,9 +34,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".SecondActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -65,7 +63,7 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".RecycleView.RecycleActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".User.FormRegisterActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -100,12 +98,22 @@
         <activity
             android:name=".BrowserActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".ArrayResourceActivity" />
-        <activity android:name=".DownloaderActivity" />
+        <activity
+            android:name=".ArrayResourceActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".DownloaderActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".MenuActivity" />
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/SplashScreenTheme" />
+            android:theme="@style/SplashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!-- <activity -->
         <!-- android:name=".Facebook.MyFacebookActivity" -->
         <!-- android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" -->
@@ -122,17 +130,21 @@
         <activity
             android:name=".User.Login2Activity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" />
-        <activity android:name=".Fragments.FragmentContainerActivity"></activity>
-        <activity android:name=".Fragments.MyPagerActivity"></activity>
-        <activity android:name=".servicePKG.ServiceStarterActivity">
+        <activity android:name=".Fragments.FragmentContainerActivity" />
+        <activity
+            android:name=".Fragments.MyPagerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".servicePKG.ServiceStarterActivity" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <service android:name=".servicePKG.MyService" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity
+            android:name=".SettingsActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".Weather.VideoActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
         </activity>
-        <service android:name=".servicePKG.MyService"/>
     </application>
 
 </manifest>

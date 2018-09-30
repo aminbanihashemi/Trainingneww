@@ -4,34 +4,47 @@
     android:id="@+id/activity_weather"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#c8d6e5"
     android:gravity="center|top"
     android:orientation="vertical"
-    android:padding="12dp"
     tools:context="app.sematech.training.Weather.WeatherActivity">
 
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
+        android:layout_gravity="left|center"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_gravity="center"
-        android:orientation="horizontal"
-        android:weightSum="10">
+        android:background="@color/colorToolbarMenuBackground"
+        android:elevation="5dp">
 
-        <EditText
-            android:id="@+id/city"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="9"
-            android:hint=" Enter city" />
+        <LinearLayout
+            android:padding="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="10">
 
-        <ImageButton
-            android:id="@+id/search"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#fff"
-            android:padding="10dp"
-            android:src="@drawable/ic_search" />
-    </LinearLayout>
+            <EditText
+                android:layout_weight="9"
+                android:id="@+id/city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:hint=" Enter city" />
+
+            <ImageButton
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="#fff"
+                android:padding="10dp"
+                android:src="@drawable/ic_search" />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
 
     <LinearLayout
 
@@ -65,6 +78,7 @@
                 android:weightSum="5">
 
                 <TextView
+                    android:textColor="#000"
                     android:gravity="center"
                     android:id="@+id/city_today"
                     android:layout_width="match_parent"
@@ -74,6 +88,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:textColor="#000"
                     android:id="@+id/temp_today"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -83,6 +98,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:textColor="#000"
                     android:id="@+id/text_today"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -104,12 +120,14 @@
                 android:weightSum="2">
 
                 <ImageView
+                    android:textColor="#000"
                     android:id="@+id/arrow_up"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="0.5" />
 
                 <TextView
+                    android:textColor="#EA2027"
                     android:id="@+id/high_today"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -119,6 +137,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:textColor="#0652DD"
                     android:id="@+id/low_today"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"

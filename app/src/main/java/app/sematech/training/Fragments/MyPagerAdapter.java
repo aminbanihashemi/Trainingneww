@@ -25,6 +25,21 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
+    public CharSequence getPageTitle(int position) {
+        if (position==0)
+            return "Frag 0";
+        if (position==1)
+            return "Frag 1";
+        if (position==2)
+            return "Frag 2";
+        if (position==3)
+            return "Frag 3";
+        if (position==4)
+            return "Frag 4";
+        return null;
+    }
+
+    @Override
     public int getCount() {
         return 5;
     }

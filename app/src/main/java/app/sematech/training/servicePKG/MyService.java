@@ -10,7 +10,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 public class MyService extends Service {
-    String TAG="my_service";
+    String TAG = "my_service";
+
     @Override
     public void onCreate() {
 
@@ -27,24 +28,19 @@ public class MyService extends Service {
 
         MediaPlayer mPlayer = new MediaPlayer();
         mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-
-        try{
+        try {
             mPlayer.setDataSource(url);
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
-        try{
+        try {
 
             mPlayer.prepare();
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
 
         mPlayer.start();
-
-
-
-
 
 //        Toast.makeText(this, "StartCommaaaand", Toast.LENGTH_SHORT).show();
         Toast.makeText(this, intent.getStringExtra("txt"), Toast.LENGTH_SHORT).show();

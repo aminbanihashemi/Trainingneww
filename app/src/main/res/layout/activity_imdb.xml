@@ -4,12 +4,44 @@
     android:id="@+id/activity_imdb"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#c8d6e5"
     android:orientation="vertical"
-    android:paddingLeft="12dp"
-    android:paddingRight="12dp"
-    android:paddingTop="12dp"
     tools:context="app.sematech.training.IMDBActivity">
+    <android.support.v7.widget.Toolbar
+        android:layout_gravity="left|center"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorToolbarMenuBackground"
+        android:elevation="5dp">
 
+        <LinearLayout
+            android:padding="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="10">
+
+            <EditText
+                android:layout_weight="9"
+                android:id="@+id/movieName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:hint=" Enter city" />
+
+            <ImageButton
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="#fff"
+                android:padding="10dp"
+                android:src="@drawable/ic_search" />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
     <!--<EditText-->
         <!--android:id="@+id/name"-->
         <!--android:layout_width="match_parent"-->
@@ -44,6 +76,7 @@
 
 
             <TextView
+                android:textColor="@color/colorToolbarMenuBackground"
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -52,6 +85,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:textColor="@color/colorToolbarMenuBackground"
                 android:id="@+id/imdbRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,6 +93,7 @@
                 android:textSize="12sp" />
 
             <TextView
+                android:textColor="@color/colorToolbarMenuBackground"
                 android:id="@+id/year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -66,6 +101,7 @@
                 android:textSize="12sp" />
 
             <TextView
+                android:textColor="@color/colorToolbarMenuBackground"
                 android:id="@+id/genre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -73,6 +109,7 @@
                 android:textSize="12sp" />
 
             <TextView
+                android:textColor="@color/colorToolbarMenuBackground"
                 android:id="@+id/plot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

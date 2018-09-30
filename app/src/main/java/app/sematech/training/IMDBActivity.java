@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,8 +25,10 @@ public class IMDBActivity extends AppCompatActivity implements View.OnClickListe
 
     Button moreData;
     TextView title, imdbRating, year, genre, plot;
+    EditText movieName;
     String value;
     ImageView image;
+    ImageButton search;
     ProgressDialog progressDialog;
 
     @Override
@@ -41,7 +44,8 @@ public class IMDBActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void bind() {
-
+        search = (ImageButton) findViewById(R.id.search);
+        movieName = (EditText) findViewById(R.id.movieName);
         title = (TextView) findViewById(R.id.title);
         imdbRating = (TextView) findViewById(R.id.imdbRating);
         year = (TextView) findViewById(R.id.year);
@@ -55,6 +59,7 @@ public class IMDBActivity extends AppCompatActivity implements View.OnClickListe
         progressDialog.setTitle("Loading");
         progressDialog.setMessage("PLS wait to load data from IMDB");
         moreData.setOnClickListener(this);
+        search.setOnClickListener(this);
 
     }
 
@@ -63,7 +68,13 @@ public class IMDBActivity extends AppCompatActivity implements View.OnClickListe
 
              if (v.getId() == R.id.more_data) {
                 linkMethod(value);
-            }
+            }else if(v.getId() == R.id.search){
+                 if (movieName.getText().toString().equals("")){
+                     movieName.setError("PLS fill field");
+                 }else{
+                     getDataFromIMDB(movieName.toString());
+                 }
+             }
     }
 
     private void linkMethod(String s) {
@@ -78,6 +89,9 @@ public class IMDBActivity extends AppCompatActivity implements View.OnClickListe
 
     private void getDataFromIMDB(String s) {
         progressDialog.show();
+        for (int i=0;i<s.length();i++){
+            s = s.replace(" ", "+");
+        }
         String url = "http://www.omdbapi.com/?t=" + s + "&apikey=70ad462a";
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, new TextHttpResponseHandler() {

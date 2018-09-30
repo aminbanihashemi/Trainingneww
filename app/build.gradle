@@ -45,4 +45,8 @@ dependencies {
     implementation 'com.airbnb.android:lottie:2.0.0'
     implementation 'com.facebook.android:facebook-android-sdk:4.7.0'
     implementation 'com.google.android.gms:play-services-auth:11.0.4'
+    implementation 'com.google.firebase:firebase-database:11.0.4'
+    implementation 'com.google.firebase:firebase-auth:11.0.4'
+    implementation 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
+
 }

@@ -5,6 +5,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.provider.Settings;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -20,13 +23,15 @@ import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
 import app.sematech.training.DataBase.DataBaseActivity;
+import app.sematech.training.Fragments.MyPagerActivity;
 import app.sematech.training.RecycleView.RecycleActivity;
 import app.sematech.training.User.Login2Activity;
 import app.sematech.training.Weather.WeatherActivity;
 import app.sematech.training.map.MapssActivity;
 
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button calculator, downloaderRegister, login, databaseActivity, listView, map, setting;
+    Button calculator, downloaderRegister, fragment, databaseActivity, listView, map, settings;
     Button searchMovie, activityWeather, recycleView, webView, wifiCheck, bluetoothCheck, mobileDataCheck, searchBtn, cancelBtn;
     EditText valueEdittext, searchBar;
     String destinationClass;
@@ -40,9 +45,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContext = this;
+        Window window = this.getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimaryDark));
         findViewById(R.id.calculator_activity).setOnClickListener(this);
         findViewById(R.id.downloader_activity).setOnClickListener(this);
-        findViewById(R.id.shared_preferences).setOnClickListener(this);
+        findViewById(R.id.fragment).setOnClickListener(this);
         findViewById(R.id.database_activity).setOnClickListener(this);
         findViewById(R.id.list_view).setOnClickListener(this);
         findViewById(R.id.search_movie).setOnClickListener(this);
@@ -55,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.mobile_data_check).setOnClickListener(this);
         findViewById(R.id.map).setOnClickListener(this);
         findViewById(R.id.animation_button_search).setOnClickListener(this);
+        findViewById(R.id.settings).setOnClickListener(this);
 
 //        findViewById(R.id.setting).setOnClickListener(this);
         bind();
@@ -65,11 +75,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void bind() {
         calculator = (Button) findViewById(R.id.calculator_activity);
         downloaderRegister = (Button) findViewById(R.id.downloader_activity);
-        login = (Button) findViewById(R.id.shared_preferences);
+        fragment = (Button) findViewById(R.id.fragment);
         databaseActivity = (Button) findViewById(R.id.database_activity);
         listView = (Button) findViewById(R.id.list_view);
         searchMovie = (Button) findViewById(R.id.search_movie);
         drawer = (DrawerLayout) findViewById(R.id.drawer);
+        settings = (Button) findViewById(R.id.settings);
         recycleView = (Button) findViewById(R.id.recycle_view_button);
         activityWeather = (Button) findViewById(R.id.activity_weather);
         webView = (Button) findViewById(R.id.web_view);
@@ -118,8 +129,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             calculatorActivityMethod();
         } else if (v.getId() == R.id.downloader_activity) {
             downloaderActivityMethod();
-        } else if (v.getId() == R.id.shared_preferences) {
-            sharedPreferencesMethod();
+        } else if (v.getId() == R.id.fragment) {
+            fragmentMethod();
         } else if (v.getId() == R.id.database_activity) {
             dataBaseActivityMethod();
         } else if (v.getId() == R.id.list_view) {
@@ -210,10 +221,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         searchBar.setVisibility(View.INVISIBLE);
                 }
             });
+        }else if (v.getId() == R.id.settings) {
+            settingsMethod();
         }
 // else if (v.getId() == R.id.setting) {
 //
 //        }
+    }
+
+    private void fragmentMethod() {
+        Intent intent = new Intent(MainActivity.this, MyPagerActivity.class);
+        intent.putExtra("message", "12346");
+        startActivity(intent);
+
+    }
+
+    private void settingsMethod() {
+        Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+        intent.putExtra("message", "12345");
+        startActivity(intent);
     }
 
     private void searchMainMethod(String s) {
@@ -249,6 +275,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void wifiIntentMethod() {
         startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
     }
+
+
 
     private void WebViewActivityMethod() {
         Intent intent = new Intent(MainActivity.this, WebpageActivity.class);
